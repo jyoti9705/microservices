@@ -4,10 +4,9 @@ import com.jyoti.webservices.restfulwebserviceswithspringboot.model.User;
 
 import java.util.List;
 
-public interface UserDaoService {
-
+public interface UserJPAService {
     public List<User> getAllUsers();
     public User addUser(User user);
     public User getSpecificUser(Integer id);
-    public User deleteById(Integer id);
+    public void deleteById(Integer id);
 }
