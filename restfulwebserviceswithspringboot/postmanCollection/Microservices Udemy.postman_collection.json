@@ -1,0 +1,1467 @@
+{
+	"info": {
+		"_postman_id": "33f61d8c-9e8c-41d5-853c-5fb8c2b7df04",
+		"name": "Microservices Udemy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MicroservicesWithSpringBoot",
+			"item": [
+				{
+					"name": "Users JPA",
+					"item": [
+						{
+							"name": "Get All Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/jpa/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa",
+										"users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Users",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/jpa/users",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"jpa",
+												"users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Jan 2022 12:16:28 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Jyoti\",\n        \"birthdate\": \"1997-09-05\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Singh\",\n        \"birthdate\": \"1997-09-05\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Get User By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/jpa/users/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa",
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get User By Id",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/jpa/users/1",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"jpa",
+												"users",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Jan 2022 12:43:44 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"Jyoti\",\n    \"birthdate\": \"1997-09-05\",\n    \"_links\": {\n        \"all-users\": {\n            \"href\": \"http://localhost:8080/jpa/users\"\n        },\n        \"self\": {\n            \"href\": \"http://localhost:8080/jpa/users/1\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Add user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Jyoti\",\r\n    \"birthdate\":\"1997-09-05\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/jpa/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa",
+										"users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add user",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"Singh\",\r\n    \"birthdate\":\"1997-09-05\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/jpa/users",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"jpa",
+												"users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Location",
+											"value": "http://localhost:8080/jpa/users/2"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Jan 2022 12:22:32 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 2,\n    \"name\": \"Singh\",\n    \"birthdate\": \"1997-09-05\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/jpa/users/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"type": "text",
+											"enabled": true,
+											"description": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete User",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/jpa/users/:id",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"jpa",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2",
+													"type": "text",
+													"enabled": true,
+													"description": "2"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Jan 2022 12:44:32 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "jyoti",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "jyoti",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Users using basic authentication with default user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jan 2022 10:48:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Jyoti\",\n        \"birthdate\": \"1997-09-05\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"ABC\",\n        \"birthdate\": \"1996-01-26\"\n    }\n]"
+						},
+						{
+							"name": "Get All Users using basic auth and xml",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=9CDAF370D4F052C6AA51F0A9483B236A; Path=/; HttpOnly"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jan 2022 10:51:00 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "<List>\n    <item>\n        <id>1</id>\n        <name>Jyoti</name>\n        <birthdate>1997-09-05</birthdate>\n    </item>\n    <item>\n        <id>2</id>\n        <name>ABC</name>\n        <birthdate>1996-01-26</birthdate>\n    </item>\n</List>"
+						},
+						{
+							"name": "Get All Users spring secuity with username and pass confiugured in application.properties",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=1A63F00D4AF3E1FA39AF210CA9285730; Path=/; HttpOnly"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jan 2022 10:57:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Jyoti\",\n        \"birthdate\": \"1997-09-05\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"ABC\",\n        \"birthdate\": \"1996-01-26\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Specific User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"R\",\r\n    \"birthdate\":\"2001-01-29\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filtering",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/filtering",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"filtering"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Versioning using URL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/person/v2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"v2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Versioning using URL version 2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/person/v2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person",
+										"v2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jan 2022 10:05:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"firstName\": \"Bob\",\n    \"lastName\": \"Charlie\"\n}"
+						},
+						{
+							"name": "Versioning using URL version 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/person/v1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jan 2022 10:05:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Bob Charlie\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Versioning using Header",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-VERSION",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/person/headers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"headers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Versioning using Header version 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-API-VERSION",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/person/headers",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person",
+										"headers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jan 2022 10:07:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Bob Charlie\"\n}"
+						},
+						{
+							"name": "Versioning using Header version 2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-API-VERSION",
+										"value": "2",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/person/headers",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person",
+										"headers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jan 2022 10:08:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"firstName\": \"Bob\",\n    \"lastName\": \"Charlie\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Versiong using content negotiation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.company.app-v2+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/person/produces",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"produces"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Versiong using content negotiation version 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.company.app-v1+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/person/produces",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person",
+										"produces"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.company.app-v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jan 2022 10:14:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Bob Charlie\"\n}"
+						},
+						{
+							"name": "Versiong using content negotiation version 2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.company.app-v2+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/person/produces",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person",
+										"produces"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.company.app-v2+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jan 2022 10:14:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"firstName\": \"Bob\",\n    \"lastName\": \"Charlie\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Versioning using Parameters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": [
+						{
+							"name": "Versioning using Parameters version 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/person/param?version=1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person",
+										"param"
+									],
+									"query": [
+										{
+											"key": "version",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jan 2022 10:16:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Bob Charlie\"\n}"
+						},
+						{
+							"name": "Versioning using Parameters version 2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/person/param?version=2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person",
+										"param"
+									],
+									"query": [
+										{
+											"key": "version",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jan 2022 10:17:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"firstName\": \"Bob\",\n    \"lastName\": \"Charlie\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"My First Post\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/jpa/users/:id/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jpa",
+								"users",
+								":id",
+								"posts"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\":\"My First Post\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/jpa/users/:id/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa",
+										"users",
+										":id",
+										"posts"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text",
+											"enabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jan 2022 16:27:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"description\": \"My First post\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Posts for User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/jpa/users/:id/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jpa",
+								"users",
+								":id",
+								"posts"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Posts for User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/jpa/users/:id/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa",
+										"users",
+										":id",
+										"posts"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text",
+											"enabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jan 2022 16:28:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"description\": \"My First post\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Post by User and Post Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": [
+						{
+							"name": "Get Post by User and Post Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/jpa/users/:id/posts/:postId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa",
+										"users",
+										":id",
+										"posts",
+										":postId"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"type": "text",
+											"enabled": true
+										},
+										{
+											"key": "postId",
+											"value": "1",
+											"type": "text",
+											"enabled": true
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jan 2022 16:45:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2022-01-16T22:15:44.4966006\",\n    \"message\": \"Post with userId : 2 and postId 1 was not found\",\n    \"details\": \"uri=/jpa/users/2/posts/1\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
